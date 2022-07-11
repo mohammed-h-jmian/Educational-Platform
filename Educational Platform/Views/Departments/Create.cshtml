@@ -1,0 +1,63 @@
+﻿@model Educational_Platform.Models.Department
+
+@{
+	ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<form asp-action="Create">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<table class="table custom-table">
+					<thead>
+						<tr>
+							<th scope="col">Order</th>
+							<th scope="col">Input</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr scope="row">
+
+							<td>     <label asp-for="DepartmentName" class="control-label"></label></td>
+							<td>
+								<input asp-for="DepartmentName" class="form-control" />
+								<span asp-validation-for="DepartmentName" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="DepartmentDescription" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="DepartmentDescription" class="form-control" />
+								<span asp-validation-for="DepartmentDescription" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<div class="form-group text-center">
+					<input type="submit" value="Create" class="btn btn-warning" />
+					<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

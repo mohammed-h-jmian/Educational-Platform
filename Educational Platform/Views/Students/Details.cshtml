@@ -1,0 +1,73 @@
+﻿@model Educational_Platform.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<table class="table custom-table">
+				<tbody>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.StudentName)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.StudentName)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.StudentDateOfBirth)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.StudentDateOfBirth)
+						</td>
+					</tr>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.StudentGender)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.StudentGender)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.StudentAddress)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.StudentAddress)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.StudentPhone)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.StudentPhone)
+						</td>
+					</tr>
+
+				
+
+				
+					<tr class="spacer">
+						<td colspan="100"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="text-center">
+				<a asp-action="Edit" asp-route-id="@Model?.StudentID" class="btn btn-warning">Edit</a> |
+				<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+			</div>
+
+		</div>
+	</div

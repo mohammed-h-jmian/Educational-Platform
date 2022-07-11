@@ -1,0 +1,104 @@
+﻿@model Educational_Platform.Models.Student
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<form asp-action="Edit">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<input type="hidden" asp-for="StudentID" />
+				<table class="table custom-table">
+					<thead>
+						<tr>
+							<th scope="col">Order</th>
+							<th scope="col">Input</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr scope="row">
+
+							<td><label asp-for="StudentName" class="control-label"></label></td>
+							<td>
+								<input asp-for="StudentName" class="form-control" />
+								<span asp-validation-for="StudentName" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="StudentDateOfBirth" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="StudentDateOfBirth" class="form-control" />
+								<span asp-validation-for="StudentDateOfBirth" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="StudentGender" class="control-label"></label>
+							</td>
+							<td>
+								@*<input asp-for="StudentGender" class="form-control" />*@
+								<select asp-for="StudentGender" class="form-control">
+									<option value="0">Male</option>
+									<option value="1">Female</option>
+								</select>
+								<span asp-validation-for="StudentGender" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="StudentAddress" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="StudentAddress" class="form-control" />
+								<span asp-validation-for="StudentAddress" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="StudentPhone" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="StudentPhone" class="form-control" />
+								<span asp-validation-for="StudentPhone" class="text-danger"></span>
+							</td>
+
+						</tr>
+
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<div class="form-group text-center">
+					<input type="submit" value="Save" class="btn btn-warning" />
+					<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

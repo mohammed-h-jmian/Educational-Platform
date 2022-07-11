@@ -1,0 +1,113 @@
+﻿@model Educational_Platform.Models.Teacher
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<form asp-action="Create">
+				<table class="table custom-table">
+					<thead>
+						<tr>
+							<th scope="col">Order</th>
+							<th scope="col">Input</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr scope="row">
+
+							<td><label asp-for="TeacherName" class="control-label"></label></td>
+							<td>
+								<input asp-for="TeacherName" class="form-control" />
+								<span asp-validation-for="TeacherName" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="TeacherDateOfBirth" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="TeacherDateOfBirth" class="form-control" />
+								<span asp-validation-for="TeacherDateOfBirth" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="TeacherDateOfEmployment" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="TeacherDateOfEmployment" class="form-control" />
+								<span asp-validation-for="TeacherDateOfEmployment" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="TeacherGender" class="control-label"></label>
+							</td>
+							<td>
+								@*<input asp-for="TeacherGender" class="form-control" />*@
+								<select asp-for="TeacherGender" class="form-control">
+									<option value="0">Male</option>
+									<option value="1">Female</option>
+								</select>
+								<span asp-validation-for="TeacherGender" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="TeacherAddress" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="TeacherAddress" class="form-control" />
+								<span asp-validation-for="TeacherAddress" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td> <label asp-for="TeacherPhone" class="control-label"></label></td>
+							<td>
+								<input asp-for="TeacherPhone" class="form-control" />
+								<span asp-validation-for="TeacherPhone" class="text-danger"></span>
+							</td>
+
+						</tr>
+
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<div class="form-group text-center">
+					<input type="submit" value="Create" class="btn btn-warning" />
+					<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

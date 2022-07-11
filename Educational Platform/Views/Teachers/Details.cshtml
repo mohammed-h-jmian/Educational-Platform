@@ -1,0 +1,83 @@
+﻿@model Educational_Platform.Models.Teacher
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<table class="table custom-table">
+				<tbody>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherName)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherName)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherDateOfBirth)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherDateOfBirth)
+						</td>
+					</tr>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherDateOfEmployment)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherDateOfEmployment)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherGender)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherGender)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherAddress)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherAddress)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherPhone)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherPhone)
+						</td>
+					</tr>
+
+
+			
+					<tr class="spacer">
+						<td colspan="100"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="text-center">
+				<a asp-action="Edit" asp-route-id="@Model?.TeacherID" class="btn btn-warning">Edit</a> |
+				<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+			</div>
+
+		</div>
+	</div>

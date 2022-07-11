@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Educational_Platform.Models.Student>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<table class="table custom-table">
+				<thead>
+					<tr>
+
+
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.StudentName)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.StudentDateOfBirth)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.StudentGender)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.StudentAddress)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.StudentPhone)
+
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr scope="row">
+
+							<td>
+								@Html.DisplayFor(modelItem => item.StudentName)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.StudentDateOfBirth)
+							</td>
+							<td>
+								@if (@item.StudentGender == 0)
+								{
+									<p>Male</p>
+								}
+								else
+								{
+									<p>Female</p>
+								}
+						
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.StudentAddress)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.StudentPhone)
+							</td>
+
+
+							<td>
+								<a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
+								<a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
+								<a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a> 
+								@*| <a asp-action="./StudentCourses/Create" asp-route-id="@item.StudentID">Add Courses </a>*@
+							</td>
+
+
+						</tr>
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					}
+				</tbody>
+			</table>
+			<p class="text-center">
+				<a asp-action="Create" class="btn btn-warning ">Create New</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+

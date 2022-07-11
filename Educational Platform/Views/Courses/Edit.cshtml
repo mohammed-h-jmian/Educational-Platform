@@ -1,0 +1,119 @@
+﻿@model Educational_Platform.Models.Course
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<form asp-action="Edit">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<input type="hidden" asp-for="CourseID" />
+				<table class="table custom-table">
+					<thead>
+						<tr>
+							<th scope="col">Order</th>
+							<th scope="col">Input</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr scope="row">
+
+							<td><label asp-for="CourseName" class="control-label"></label></td>
+							<td>
+								<input asp-for="CourseName" class="form-control" />
+								<span asp-validation-for="CourseName" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="CourseHours" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="CourseHours" class="form-control" />
+								<span asp-validation-for="CourseHours" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="CoursePrice" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="CoursePrice" class="form-control" />
+								<span asp-validation-for="CoursePrice" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="CourseStartDate" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="CourseStartDate" class="form-control" />
+								<span asp-validation-for="CourseStartDate" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>
+								<label asp-for="CourseEndDate" class="control-label"></label>
+							</td>
+							<td>
+								<input asp-for="CourseEndDate" class="form-control" />
+								<span asp-validation-for="CourseEndDate" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td> <label asp-for="TeacherId" class="control-label"></label></td>
+							<td>
+								<select asp-for="TeacherId" class="form-control" asp-items="ViewBag.TeacherID"></select>
+								<span asp-validation-for="TeacherId" class="text-danger"></span>
+							</td>
+
+						</tr>
+						<tr scope="row">
+
+							<td>   <label asp-for="DepartmentId" class="control-label"></label></td>
+							<td>
+								<select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentID"></select>
+								<span asp-validation-for="DepartmentId" class="text-danger"></span>
+							</td>
+
+						</tr>
+
+
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<div class="form-group text-center">
+					<input type="submit" value="Save" class="btn btn-warning" />
+					<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

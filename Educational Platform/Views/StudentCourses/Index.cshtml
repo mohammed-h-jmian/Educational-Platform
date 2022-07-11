@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Educational_Platform.Models.StudentCourse>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<table class="table custom-table">
+				<thead>
+					<tr>
+
+
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.Student)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.Course)
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr scope="row">
+
+							<td>
+								@Html.DisplayFor(modelItem => item.Student.StudentName)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.Course.CourseName)
+							</td>
+
+							<td>
+					
+
+								@Html.ActionLink("Delete", "Delete", new {  studentId=item.StudentID,  courseId=item.CourseID })
+
+							</td>
+
+
+						</tr>
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					}
+				</tbody>
+			</table>
+			<p class="text-center">
+				<a asp-action="Create" class="btn btn-warning ">Create New</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+

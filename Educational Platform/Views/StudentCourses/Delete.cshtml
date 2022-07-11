@@ -1,0 +1,54 @@
+﻿@model Educational_Platform.Models.StudentCourse
+
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<h3>Are you sure you want to delete this?</h3>
+			<hr />
+			<table class="table custom-table">
+				<tbody>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.Student)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.Student.StudentID)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.Course)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.Course.CourseID)
+						</td>
+					</tr>
+					<tr class="spacer">
+						<td colspan="100"></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<form asp-action="Delete" class="text-center">
+				<input type="hidden" asp-for="CourseID" />
+				<input type="hidden" asp-for="StudentID" />
+				<input type="submit" value="Delete" class="btn btn-danger" /> |
+				<a asp-action="Index" class="btn btn-secondary" >Back to List</a>
+			</form>
+
+			@*<form asp-action="Delete">
+				<input type="hidden" asp-for="CourseID" />
+				<input type="submit" value="Delete" class="btn btn-danger" /> |
+				<a asp-action="Index"  >Back to List</a>
+			</form>*@
+		</div>
+	</div>
+</div>

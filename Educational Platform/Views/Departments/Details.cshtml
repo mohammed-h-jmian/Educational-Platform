@@ -1,0 +1,43 @@
+﻿@model Educational_Platform.Models.Department
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<table class="table custom-table">
+				<tbody>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.DepartmentName)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.DepartmentName)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.DepartmentDescription)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.DepartmentDescription)
+						</td>
+					</tr>
+					<tr class="spacer">
+						<td colspan="100"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="text-center">
+				<a asp-action="Edit" asp-route-id="@Model?.DepartmentID" class="btn btn-warning">Edit</a> |
+				<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+			</div>
+
+		</div>
+	</div>

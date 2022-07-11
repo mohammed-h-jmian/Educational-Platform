@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Educational_Platform.Models.Teacher>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<table class="table custom-table">
+				<thead>
+					<tr>
+
+
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.TeacherName)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.TeacherDateOfBirth)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.TeacherDateOfEmployment)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.TeacherGender)
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.TeacherAddress)
+
+						</th>
+						<th scope="col">
+							@Html.DisplayNameFor(model => model.TeacherPhone)
+
+						</th>
+
+
+
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr scope="row">
+
+							<td>
+								@Html.DisplayFor(modelItem => item.TeacherName)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TeacherDateOfBirth)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TeacherDateOfEmployment)
+							</td>
+
+							@*@Html.DisplayFor(modelItem => item.TeacherGender)*@
+							<td>
+								@if (@item.TeacherGender == 0)
+								{
+									<p>Male</p>
+								}
+								else
+								{
+									<p>Female</p>
+								}
+
+
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TeacherAddress)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TeacherPhone)
+							</td>
+
+							<td>
+								<a asp-action="Edit" asp-route-id="@item.TeacherID">Edit</a> |
+								<a asp-action="Details" asp-route-id="@item.TeacherID">Details</a> |
+								<a asp-action="Delete" asp-route-id="@item.TeacherID">Delete</a>
+							</td>
+
+
+						</tr>
+						<tr class="spacer">
+							<td colspan="100"></td>
+						</tr>
+					}
+				</tbody>
+			</table>
+			<p class="text-center">
+				<a asp-action="Create" class="btn btn-warning ">Create New</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+

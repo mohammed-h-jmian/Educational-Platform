@@ -1,0 +1,111 @@
+﻿@model Educational_Platform.Models.Course
+
+@{
+	ViewData["Title"] = "Delete";
+}
+
+
+<link rel="stylesheet" href="~/css/course.css" />
+
+<div class="content">
+	<div class="container">
+		<div class="table-responsive custom-table-responsive">
+			<h3>Are you sure you want to delete this?</h3>
+			<hr />
+			<table class="table custom-table">
+				@*	<thead>
+				<tr>
+				<th scope="col">Order</th>
+				<th scope="col">Input</th>
+
+				</tr>
+				</thead>*@
+				<tbody>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.CourseName)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.CourseName)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.CourseHours)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.CourseHours)
+						</td>
+					</tr>
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.CoursePrice)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.CoursePrice)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.CourseStartDate)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.CourseStartDate)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.CourseEndDate)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.CourseEndDate)
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.TeacherId)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.TeacherId)
+						</td>
+					</tr>
+
+
+					<tr scope="row">
+						<td>
+							@Html.DisplayNameFor(model => model.DepartmentId)
+						</td>
+						<td>
+							@Html.DisplayFor(model => model.DepartmentId)
+						</td>
+					</tr>
+
+
+
+
+
+
+					<tr class="spacer">
+						<td colspan="100"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			@*	<br />
+			<div class="form-group">
+			<input type="submit" value="Create" class="btn btn-warning" />
+			<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+			</div>*@
+			<form asp-action="Delete" class="text-center">
+				<input type="hidden" asp-for="CourseID" />
+				<input type="submit" value="Delete" class="btn btn-danger" /> |
+				<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+			</form>
+		</div>
+	</div>
+</div>
